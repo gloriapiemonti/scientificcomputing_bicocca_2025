@@ -12,11 +12,11 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Check README.md for my name
         run: |
-          if ! grep -q "Gloria Piemonti" README.md; then
+          if ! grep -qi "Gloria Piemonti" README.md; then
             echo "ERROR: README.md must contain your name!"
             exit 1
           fi
